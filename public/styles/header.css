@@ -1,0 +1,92 @@
+header {
+    background-image: linear-gradient(to right, rgb(54, 54, 54), rgb(29, 29, 29));
+    color: #e4e4e4;
+    text-align: center;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 5px
+}
+
+h2{
+    margin: 0;
+    margin-bottom: 12px
+}
+
+nav a {
+    color: #e4e4e4;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+a {
+    padding: 4px;
+    border-radius: 5px;
+}
+
+nav a.active {
+    color: #e4e4e4;
+    font-weight: bold;
+    background-color: chocolate;
+}
+
+@media only screen and (max-width: 767px) {
+    nav a {
+        font-size: 12px
+    }
+    h2 {
+        font-size: 15px;
+    }
+    .flex {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    #notification-button {
+        display: block;
+        background-color: green;
+        padding: 7px;
+        font-size: medium;
+        margin: 0 auto;
+    }
+    .centered {
+        width: 80vw;
+        margin: 20px auto
+    } 
+    .input-centered{
+        width: 40vw;
+    }
+    .hidden {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 767px) {
+    .flex {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .centered {
+        width: 65vw;
+        margin: 20px auto
+    } 
+    #notification-button {
+        position: fixed;
+        top: 10px;
+        right: 10px; 
+        z-index: 1000; 
+        background-color: green;
+        margin: 0
+    }
+    .input-centered{
+        width: 15vw;
+    }
+    .hidden {
+        display: none;
+    }
+}

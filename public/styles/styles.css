@@ -1,0 +1,66 @@
+html {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    background-image: linear-gradient(to right, rgb(135, 135, 135), rgb(71, 71, 71));
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0
+}
+
+#player{
+    width: 100%;
+}
+
+.margin-10{
+    margin: 10px
+}
+
+button{
+    display: block;
+    padding: 12px;
+    background-color: chocolate;
+    border: none;
+    border-radius: 5px;
+    font-size:medium;
+    color: #e4e4e4;
+    margin: 10px auto
+}
+
+button:hover{
+    background-color: rgb(242, 130, 51);
+    cursor: pointer;
+}
+
+.curved-border{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.middle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-centered{
+    display: block;
+    margin: 20px auto;
+    padding: 12px
+}
+
+#notification-button:hover {
+    background-color: rgb(22, 201, 22);
+    cursor: pointer
+}
+
+#notification-button[disabled] {
+    background-color: #ddd;
+    border: 1px solid #aaa;
+    color: #888;
+}

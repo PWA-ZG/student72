@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <title>Stored screenshots</title>
+</head>
+<body>
+    <header>
+        <h2 id="collection-heading">Stored screenshots</h2>
+        <nav>
+            <a href="index.html" id="home-link">Take a screenshot</a>
+            <a href="collection.html" id="collection-link" class="active">Screenshots collection</a>
+        </nav>
+    </header>  
+    <input type="text" id="fetch-input" class="input-centered curved-border" placeholder="Enter username">
+    <button  onclick="fetchScreenshots()">Search</button>
+    <p id="info-text"></p>
+    <div id="screenshot-container"></div>
+
+    <script src="./scripts/fetchScreenshots.js"></script>
+<style>
+#screenshot-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin: 10px auto;
+}
+
+.screenshot-item {
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.screenshot-item img {
+    width: 90%;
+}
+#info-text{
+    text-align: center;
+    color: chocolate;
+    font-weight: bold;
+}
+</style>
+</body>
+</html>

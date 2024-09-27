@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h2>Take screenshot, edit it and store it!</h2>
+        <nav>
+            <a href="index.html" id="home-link" class="active">Take a screenshot</a>
+            <a href="collection.html" id="collection-link">Screenshots collection</a>
+        </nav>
+    </header>
+    <button id="notification-button">Notify me when others upload</button>
+    <div id="canvas-div" class="centered hidden">
+        <canvas id="canvas" class="curved-border"></canvas>
+    </div>
+    <div id="video-div" class="centered hidden">
+        <video id="player" autoplay class="curved-border"></video>
+    </div>
+    <button id="screenshot-button" onclick="screenshot()" class="hidden">Take screenshot</button>
+
+    <input type="text" id="name-input" class="input-centered curved-border hidden" placeholder="Your name...">
+
+    <div id="tools" class="centered flex hidden">
+      <div id="radio-buttons" class="margin-10">
+          <input type="radio" name="colorRadio" value="black" checked />
+          <label for="black">Black</label>
+          <input type="radio" name="colorRadio" value="red" />
+          <label for="black">Red</label>
+          <input type="radio" name="colorRadio" value="green" />
+          <label for="black">Green</label>
+          <input type="radio" name="colorRadio" value="blue" />
+          <label for="black">Blue</label>
+      </div>
+      <textarea id="notes" cols="60" rows="5" class="curved-border" placeholder="Give it a description..."></textarea>
+      <button id="register-button">Store</button>
+      <button id="restart-button" onclick="restart()">Discard</button>
+    </div>
+    <input type="file" id="upload-input" accept="image/*" style="display: none;" onchange="handleFileSelect(event)">
+    <button id="upload-button" onclick="document.getElementById('upload-input').click()" class="hidden">Choose Image</button>
+  
+    <script src="./scripts/screenshot.js" ></script>
+    <script src="./scripts/fileUpload.js" ></script>
+    <script src="./scripts/restart.js"></script>
+    
+    <script>
+      navigator.serviceWorker.register('./sw.js', { type: 'module' })
+          .then(reg => console.log('SW registered!'))
+          .catch(err => console.log('Boo!', err));
+    </script>
+    <script type="module" src="./scripts/registerEvent.js"></script>
+    <script src="./scripts/push.js"></script>
+  </body>
+</html>
